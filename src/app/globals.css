@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f4f5f7;
+  --panel: #ffffff;
+  --panel-2: #fafafa;
+  --text: #0f1115;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --accent-contrast: #ffffff;
+  --bubble-me: #2563eb;
+  --bubble-me-text: #ffffff;
+  --bubble-other: #f1f2f4;
+  --bubble-other-text: #0f1115;
+  --dock: #ffffff;
+  --shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+}
+
+/* 2. Hacker Type Dark + Green */
+[data-theme="hacker"] {
+  --bg: #050a06;
+  --panel: #0b120c;
+  --panel-2: #0e1710;
+  --text: #4ade80;
+  --muted: #3f8a5a;
+  --border: #16351f;
+  --accent: #22c55e;
+  --accent-contrast: #04170a;
+  --bubble-me: #14361f;
+  --bubble-me-text: #6ee7a0;
+  --bubble-other: #0e1c12;
+  --bubble-other-text: #4ade80;
+  --dock: #0b120c;
+  --shadow: 0 0 0 1px rgba(34, 197, 94, 0.15);
+}
+
+/* 3. Cyberpunk Synthwave */
+[data-theme="cyberpunk"] {
+  --bg: #140b21;
+  --panel: #1c1030;
+  --panel-2: #23143c;
+  --text: #f0e9ff;
+  --muted: #a98fd6;
+  --border: #3a2359;
+  --accent: #22d3ee;
+  --accent-contrast: #0a0715;
+  --bubble-me: #d946ef;
+  --bubble-me-text: #ffffff;
+  --bubble-other: #241539;
+  --bubble-other-text: #f0e9ff;
+  --dock: #1c1030;
+  --shadow: 0 0 0 1px rgba(34, 211, 238, 0.18);
+}
+
+/* 4. Obsidian Midnight OLED */
+[data-theme="obsidian"] {
+  --bg: #000000;
+  --panel: #0a0a0a;
+  --panel-2: #101010;
+  --text: #f5f5f5;
+  --muted: #7a7a7a;
+  --border: #1c1c1c;
+  --accent: #ffffff;
+  --accent-contrast: #000000;
+  --bubble-me: #ffffff;
+  --bubble-me-text: #000000;
+  --bubble-other: #141414;
+  --bubble-other-text: #f5f5f5;
+  --dock: #0a0a0a;
+  --shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* 5. Nordic Alpine Ice */
+[data-theme="nordic"] {
+  --bg: #e9eef4;
+  --panel: #ffffff;
+  --panel-2: #f2f6fb;
+  --text: #2e3440;
+  --muted: #6b7688;
+  --border: #d3dce8;
+  --accent: #5e81ac;
+  --accent-contrast: #ffffff;
+  --bubble-me: #5e81ac;
+  --bubble-me-text: #ffffff;
+  --bubble-other: #e5ecf4;
+  --bubble-other-text: #2e3440;
+  --dock: #ffffff;
+  --shadow: 0 1px 3px rgba(46, 52, 64, 0.1);
+}
+
+/* 6. Warm Sunset Latte */
+[data-theme="latte"] {
+  --bg: #f3e9dc;
+  --panel: #fbf4ea;
+  --panel-2: #f6ecdd;
+  --text: #4a3527;
+  --muted: #9b7d64;
+  --border: #e3d1bb;
+  --accent: #c8794b;
+  --accent-contrast: #ffffff;
+  --bubble-me: #c8794b;
+  --bubble-me-text: #ffffff;
+  --bubble-other: #efe3d2;
+  --bubble-other-text: #4a3527;
+  --dock: #fbf4ea;
+  --shadow: 0 1px 3px rgba(74, 53, 39, 0.12);
+}
+
+/* 7. Royal Purple Glass */
+[data-theme="royal"] {
+  --bg: #1a1130;
+  --panel: rgba(45, 28, 82, 0.6);
+  --panel-2: rgba(60, 38, 105, 0.5);
+  --text: #f3edff;
+  --muted: #b9a7e6;
+  --border: rgba(168, 132, 255, 0.25);
+  --accent: #a855f7;
+  --accent-contrast: #ffffff;
+  --bubble-me: #7c3aed;
+  --bubble-me-text: #ffffff;
+  --bubble-other: rgba(70, 45, 120, 0.55);
+  --bubble-other-text: #f3edff;
+  --dock: rgba(45, 28, 82, 0.75);
+  --shadow: 0 8px 30px rgba(124, 58, 237, 0.2);
+}
+[data-theme="royal"] body {
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(124, 58, 237, 0.3),
+      transparent 40%
+    ),
+    radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.25), transparent 45%);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+* {
+  border-color: var(--border);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Rainbow name for Jaber */
+@keyframes rainbow {
+  0% { color: #ff0040; }
+  20% { color: #ff9500; }
+  40% { color: #ffe600; }
+  60% { color: #00e676; }
+  80% { color: #00b0ff; }
+  100% { color: #d500f9; }
+}
+.rainbow-text {
+  animation: rainbow 3s linear infinite;
+  font-weight: 700;
+}
+
+@keyframes aura-spin {
+  to { transform: rotate(360deg); }
+}
+.aura-ring::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 999px;
+  padding: 2px;
+  background: conic-gradient(var(--aura-color), transparent, var(--aura-color));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: aura-spin 3s linear infinite;
+}
+
+/* Admin effect keyframes */
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-8px, 4px); }
+  40% { transform: translate(8px, -4px); }
+  60% { transform: translate(-6px, -6px); }
+  80% { transform: translate(6px, 6px); }
+}
+.fx-shake { animation: shake 0.5s ease-in-out 3; }
+
+@keyframes spin-chaos {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+.fx-spin { animation: spin-chaos 1.2s ease-in-out 2; }
+.fx-flip { transform: scaleY(-1) scaleX(-1); transition: transform 0.6s; }
+
+@keyframes gravity {
+  0% { transform: translateY(0) rotate(0); }
+  100% { transform: translateY(100vh) rotate(35deg); opacity: 0; }
+}
+.fx-gravity { animation: gravity 1.6s ease-in forwards; }
+
+@keyframes disintegrate {
+  0% { opacity: 1; filter: blur(0); transform: scale(1); }
+  100% { opacity: 0; filter: blur(14px); transform: scale(1.3) translateY(-40px); }
+}
+.fx-thanos { animation: disintegrate 1.8s ease-out forwards; }
+
+@keyframes flashbang {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.fx-flashbang {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 9999;
+  animation: flashbang 1.6s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes skull-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+.skull-pulse { animation: skull-pulse 0.7s ease-in-out infinite; }
+
+@keyframes warn-flash {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.15; }
+}
+.warn-flash { animation: warn-flash 0.5s steps(1) infinite; }
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-10vh) rotate(0); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0.9; }
+}
+.confetti-piece { animation: confetti-fall linear forwards; }
+
+@keyframes glitch-anim {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 1px); }
+  100% { transform: translate(0); }
+}
+.fx-glitch { animation: glitch-anim 0.2s infinite; }
+
+.fadein { animation: fadein 0.6s ease forwards; }
+@keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.glass {
+  background: var(--panel);
+  backdrop-filter: blur(12px);
+}
